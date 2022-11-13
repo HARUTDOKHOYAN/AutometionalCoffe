@@ -17,7 +17,7 @@
         <local:UserDisplayControl 
                 x:Name="CoffeeConfig"
                 Grid.Column="1"   
-                ViewModel="{x:Bind ViewModel.ConfigurationViewModel}"/>
+                ViewModel="{x:Bind ViewModel.UserDisplayViewModel}"/>
 
 
     </Grid>

@@ -51,6 +51,6 @@
         </ListView>
         <!--User input control-->
         <view:UserImputParametrControl Grid.Row="2" 
-                              ViewModel="{x:Bind ViewModel.UserDisplayViewModle}"/>
+                              ViewModel="{x:Bind ViewModel.UserImputParametrsViewModel}"/>
     </Grid>
 </UserControl>
