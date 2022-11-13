@@ -10,3 +10,6 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+
+#Visual Studio cashing
+.vs/
