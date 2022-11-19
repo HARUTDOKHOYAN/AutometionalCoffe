@@ -1,10 +1,10 @@
-﻿using AutometionalCoffee.ViewModel;
-using AutometionalCoffee.Model;
-using Windows.UI.Xaml.Controls;
+﻿using AutometionalCoffee.Model;
+using AutometionalCoffee.ViewModel;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 
-namespace AutometionalCoffee
+namespace AutometionalCoffe.View.Control
 {
     public sealed partial class UserDisplayControl : UserControl
     {

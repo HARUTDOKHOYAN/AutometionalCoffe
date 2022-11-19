@@ -2,11 +2,11 @@
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 
-
 namespace AutometionalCoffe.View
 {
     public sealed partial class UserImputParametrControl : UserControl
     {
+
         public UserImputParametrControl()
         {
             this.InitializeComponent();
@@ -35,7 +35,7 @@ namespace AutometionalCoffe.View
 
         private void AddCoinButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.AddCoin(int.Parse(CoinCount.Text));
+            ViewModel.AddCoin(CoinCount.Text);
         }
 
     

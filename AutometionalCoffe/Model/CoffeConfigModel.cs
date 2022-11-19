@@ -1,4 +1,6 @@
-﻿namespace AutometionalCoffee.Model
+﻿using System.Collections.Generic;
+
+namespace AutometionalCoffee.Model
 {
     public class CoffeConfigModel
     {
@@ -6,6 +8,8 @@
 
         public int Cost { get; set; }
 
-        public int SugarValue { get; set;  }
+        public int SugarValue { get; set; }
+
+        public List<string> CoffeeActions { get; set; }
     }
 }

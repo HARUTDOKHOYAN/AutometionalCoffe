@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="AutometionalCoffee.UserDisplayControl"
+    x:Class="AutometionalCoffe.View.Control.UserDisplayControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -34,18 +34,20 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                <DataTemplate x:DataType="modle1:CoffeConfigModel">
-                    <Grid Width="100" Height="60" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Button x:Name="CoffeeButton"
-                                Grid.Row="0" 
-                                Content="{x:Bind Name}" Click="CoffeeButton_Click"/>
-                        <StackPanel Grid.Row="1" >
-                            <TextBlock Text="{x:Bind Cost}"/>
-                        </StackPanel>
-                    </Grid>
+                    <ListViewItem>
+                        <Grid Width="100" Height="60" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="CoffeeButton"
+                                    Grid.Row="0" 
+                                    Content="{x:Bind Name}" Click="CoffeeButton_Click"/>
+                            <StackPanel Grid.Row="1" >
+                                <TextBlock Text="{x:Bind Cost}"/>
+                            </StackPanel>
+                        </Grid>
+                    </ListViewItem>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

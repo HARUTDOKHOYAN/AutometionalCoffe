@@ -1,23 +1,33 @@
 ﻿using AutometionalCoffee.ViewModel;
 using AutometionalCoffee.Systems;
 using AutometionalCoffee.Model;
+using System.Threading.Tasks;
 
 namespace AutometionalCoffee
 {
     public class AutometionalCore 
     {
-        private  PaymentSystem _paymentSystem;
+        private PaymentSystem _paymentSystem;
         public AutometionalCore()
         {
             InitializeComponent();
         }
         public UserDisplayViewModel UserDisplayViewModel { get; set; }
-        
-        public void CoffeeRegister(CoffeConfigModel sender)
+        public CoffeeWorkViewModel CoffeeWorkViewModel { get; set; }
+
+
+        public async Task CoffeeRegister(CoffeConfigModel sender)
         {
             if (!_paymentSystem.PayForCoffee(sender.Cost))
                 return;
             UserDisplayViewModel.ReturnChange();
+
+            CoffeeWorkViewModel.StartCreat();
+
+            foreach (var action in sender.CoffeeActions)
+            {
+              await  CoffeeWorkViewModel.ExistActions[action].Invoke(sender); 
+            }
         }
 
         private void InitializeComponent()
