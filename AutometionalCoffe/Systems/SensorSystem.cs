@@ -9,5 +9,15 @@
             int resalt;
             return int.TryParse(coinExample, out resalt);
         }
+
+        public static bool WaterAmountSensor(int amount , int minCount)
+        {
+            return amount <= minCount;
+        }
+
+        public static bool TempSensor(int temp , int minTemp)
+        {
+            return temp <= minTemp;
+        }
     }
 }

@@ -1,8 +1,6 @@
-﻿using AutometionalCoffee.Model;
-using System;
+﻿using AutometionalCoffe.ViewModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using AutometionalCoffee.Model;
 using System.Threading.Tasks;
 
 namespace AutometionalCoffee.ViewModel
@@ -12,10 +10,16 @@ namespace AutometionalCoffee.ViewModel
     public class CoffeeWorkViewModel
     {
         public Dictionary<string, CoffeeAction> ExistActions { get; set; }
+        public WaterHeatingViewModel waterHeatingViewModel { get; set; }
 
+
+        public CoffeeWorkViewModel()
+        {
+            waterHeatingViewModel = new WaterHeatingViewModel();
+        }
         public void StartCreat()
         {
-
+            var a = waterHeatingViewModel.GetHotWater(200);
         }
     }
 }

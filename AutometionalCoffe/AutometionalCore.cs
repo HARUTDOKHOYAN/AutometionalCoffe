@@ -24,16 +24,17 @@ namespace AutometionalCoffee
 
             CoffeeWorkViewModel.StartCreat();
 
-            foreach (var action in sender.CoffeeActions)
-            {
-              await  CoffeeWorkViewModel.ExistActions[action].Invoke(sender); 
-            }
+            //foreach (var action in sender.CoffeeActions)
+            //{
+            //  await  CoffeeWorkViewModel.ExistActions[action].Invoke(sender); 
+            //}
         }
 
         private void InitializeComponent()
         {
             _paymentSystem = new PaymentSystem();
             UserDisplayViewModel = new UserDisplayViewModel(_paymentSystem);
+            CoffeeWorkViewModel = new CoffeeWorkViewModel();
         }
     }
 }

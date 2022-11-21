@@ -9,45 +9,23 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid > 
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <!--  WaterContainer  -->
-        <Grid
-            x:Name="WaterContainer"
+
+        <control:WaterHeatingControl
             Grid.Row="0"
             Grid.Column="0"
-            Width="200"
-            Margin="5"
-            HorizontalAlignment="Left"
-            BorderBrush="Black"
-            BorderThickness="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <TextBlock
-                Grid.Row="0"
-                HorizontalAlignment="Center"
-                Text="WaterContainer" />
-            <TextBlock
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                Text="100" />
-            <control:SensorControl
-                Grid.Row="2"
-                Grid.Column="0"
-                SensorColor="Yellow"
-                SensorName="WaterSensor" />
-        </Grid>
+            VerticalAlignment="Top"
+            ViewModel="{x:Bind ViewModel.waterHeatingViewModel}" />
+
     </Grid>
 </UserControl>

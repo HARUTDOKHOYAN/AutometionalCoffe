@@ -126,6 +126,7 @@
     <Compile Include="Systems\SensorSystem.cs" />
     <Compile Include="ViewModel\CoffeeWorkViewModel.cs" />
     <Compile Include="ViewModel\UserImputParametrViewModel.cs" />
+    <Compile Include="ViewModel\WaterHeatingViewModel.cs" />
     <Compile Include="View\CoffeeWorkView.xaml.cs">
       <DependentUpon>CoffeeWorkView.xaml</DependentUpon>
     </Compile>
@@ -142,6 +143,9 @@
     </Compile>
     <Compile Include="View\Control\UserImputParametrControl.xaml.cs">
       <DependentUpon>UserImputParametrControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\WaterHeatingControl.xaml.cs">
+      <DependentUpon>WaterHeatingControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Control\UserImputParametrControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Control\WaterHeatingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
