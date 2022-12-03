@@ -28,5 +28,11 @@
             Grid.Column="2"
             VerticalAlignment="Top"
             ViewModel="{x:Bind ViewModel.ContainerViewModel}" />
+
+        <control:MilkContainerControl
+            Grid.Row="1"
+            Grid.Column="2"
+            VerticalAlignment="Top"
+            ViewModel="{x:Bind ViewModel.MilkContainerViewModel}" />
     </Grid>
 </UserControl>

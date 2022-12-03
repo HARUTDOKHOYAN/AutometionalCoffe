@@ -12,12 +12,14 @@ namespace AutometionalCoffee.ViewModel
         public Dictionary<string, CoffeeAction> ExistActions { get; set; }
         public WaterHeatingViewModel WaterHeatingViewModel { get; set; }
         public ContainerViewModel ContainerViewModel { get; set; }
+        public MilkContainerViewModel MilkContainerViewModel { get; set; }
 
 
         public CoffeeWorkViewModel()
         {
             WaterHeatingViewModel = new WaterHeatingViewModel();
             ContainerViewModel = new ContainerViewModel();
+            MilkContainerViewModel = new MilkContainerViewModel();
             ExistActions = new Dictionary<string, CoffeeAction>
             {
                 ["get_hotwater"] = WaterHeatingViewModel.GetHotWater,

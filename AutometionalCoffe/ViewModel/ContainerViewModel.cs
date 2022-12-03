@@ -70,7 +70,7 @@ namespace AutometionalCoffe.ViewModel
         {
             CoffeeName= component.Name;
             CoffeeContainerCount -= component.CoffeeCount;
-            CoffeeArrowColor.Color = Color.FromArgb(255, 0, 0, 255);
+            CoffeeArrowColor.Color = Color.FromArgb(255, 200, 23, 23);
             await Task.Delay(component.CoffeeCount*300);
             CoffeeArrowColor.Color = Color.FromArgb(255, 0, 0, 0);
             GrindSensorColor.Color = Color.FromArgb(255, 0, 255, 0);

@@ -126,6 +126,7 @@
     <Compile Include="Systems\SensorSystem.cs" />
     <Compile Include="ViewModel\ContainerViewModel.cs" />
     <Compile Include="ViewModel\CoffeeWorkViewModel.cs" />
+    <Compile Include="ViewModel\MilkContainerViewModel.cs" />
     <Compile Include="ViewModel\UserImputParametrViewModel.cs" />
     <Compile Include="ViewModel\WaterHeatingViewModel.cs" />
     <Compile Include="View\CoffeeWorkView.xaml.cs">
@@ -138,6 +139,9 @@
     <Compile Include="ViewModel\UserDisplayViewModel.cs" />
     <Compile Include="View\Control\ContainerControl.xaml.cs">
       <DependentUpon>ContainerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\MilkContainerControl.xaml.cs">
+      <DependentUpon>MilkContainerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Control\SensorControl.xaml.cs">
       <DependentUpon>SensorControl.xaml</DependentUpon>
@@ -185,6 +189,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Control\ContainerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Control\MilkContainerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
