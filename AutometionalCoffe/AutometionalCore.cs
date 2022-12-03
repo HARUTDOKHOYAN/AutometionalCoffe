@@ -13,21 +13,21 @@ namespace AutometionalCoffee
             InitializeComponent();
         }
         public UserDisplayViewModel UserDisplayViewModel { get; set; }
+
         public CoffeeWorkViewModel CoffeeWorkViewModel { get; set; }
 
-
+            
         public async Task CoffeeRegister(CoffeConfigModel sender)
         {
             if (!_paymentSystem.PayForCoffee(sender.Cost))
                 return;
             UserDisplayViewModel.ReturnChange();
 
-            CoffeeWorkViewModel.StartCreat();
 
-            //foreach (var action in sender.CoffeeActions)
-            //{
-            //  await  CoffeeWorkViewModel.ExistActions[action].Invoke(sender); 
-            //}
+            foreach (var action in sender.CoffeeActions)
+            {
+                await CoffeeWorkViewModel.ExistActions[action].Invoke(sender);
+            }
         }
 
         private void InitializeComponent()

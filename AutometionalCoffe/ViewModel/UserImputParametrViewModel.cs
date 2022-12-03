@@ -14,6 +14,7 @@ namespace AutometionalCoffe.ViewModel
         private SolidColorBrush _coinSensorColoe;
         private PaymentSystem _payment;
         private int _balance;
+        private string _coffeeName;
         private int _change;
         private int _sugarValue;
 
@@ -23,9 +24,20 @@ namespace AutometionalCoffe.ViewModel
             CoinSensorColor = new SolidColorBrush();
             CoinSensorColor.Color =  Color.FromArgb(255,255,255,0);
             SugarValue = 3;
+            _coffeeName = "Not selected";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public string CoffeeName
+        {
+            get { return _coffeeName; }
+            set 
+            {
+                _coffeeName = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public int Balance
         {
@@ -76,7 +88,6 @@ namespace AutometionalCoffe.ViewModel
                 CoinSensorColor.Color = Color.FromArgb(255, 0, 255, 0);
             }
             else CoinSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
-            Balance = _payment.GetBance();
         }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")

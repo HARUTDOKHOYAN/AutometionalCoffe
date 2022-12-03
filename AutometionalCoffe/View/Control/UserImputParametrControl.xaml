@@ -6,19 +6,25 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <!--  Display  -->
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Balance" />
-            <TextBlock Grid.Row="1" Text="{x:Bind ViewModel.Balance, Mode=OneWay}" />
+
+            <StackPanel Grid.Row="0">
+                <TextBlock FontSize="17  " Text="Balance" />
+                <TextBlock Text="{x:Bind ViewModel.Balance, Mode=OneWay}" />
+                <TextBlock FontSize="17" Text="CoffeeName" />
+                <TextBlock Text="{x:Bind ViewModel.CoffeeName, Mode=OneWay}" />
+            </StackPanel>
+
             <TextBlock
                 Grid.Row="2"
                 Margin="50,0,0,0"
@@ -61,10 +67,12 @@
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Margin="0,0,15,0" />
-            <control:SensorControl                 
+            <control:SensorControl
                 Grid.Row="2"
                 Grid.Column="0"
-                Grid.ColumnSpan="2" SensorColor="{x:Bind ViewModel.CoinSensorColor, Mode=OneWay}" SensorName="CoinSensor" />
+                Grid.ColumnSpan="2"
+                SensorColor="{x:Bind ViewModel.CoinSensorColor, Mode=OneWay}"
+                SensorName="CoinSensor" />
             <TextBlock
                 Grid.Row="3"
                 Grid.Column="1"

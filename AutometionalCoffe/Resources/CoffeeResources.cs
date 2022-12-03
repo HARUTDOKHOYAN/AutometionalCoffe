@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using AutometionalCoffee.Model;
 
 namespace AutometionalCoffe.Resources
@@ -10,7 +11,10 @@ namespace AutometionalCoffe.Resources
                 new CoffeConfigModel
                 {
                     Name = "Coffee1", 
-                    Cost = 150
+                    Cost = 150,
+                    CoffeeActions = new List<string>{ "get_hotwater" , "get_componet" },
+                    CoffeeCount = 8,
+                    WaterCount= 200,
                 },
                 new CoffeConfigModel
                 {

@@ -10,16 +10,20 @@ namespace AutometionalCoffee.ViewModel
     public class CoffeeWorkViewModel
     {
         public Dictionary<string, CoffeeAction> ExistActions { get; set; }
-        public WaterHeatingViewModel waterHeatingViewModel { get; set; }
+        public WaterHeatingViewModel WaterHeatingViewModel { get; set; }
+        public ContainerViewModel ContainerViewModel { get; set; }
 
 
         public CoffeeWorkViewModel()
         {
-            waterHeatingViewModel = new WaterHeatingViewModel();
-        }
-        public void StartCreat()
-        {
-            var a = waterHeatingViewModel.GetHotWater(200);
+            WaterHeatingViewModel = new WaterHeatingViewModel();
+            ContainerViewModel = new ContainerViewModel();
+            ExistActions = new Dictionary<string, CoffeeAction>
+            {
+                ["get_hotwater"] = WaterHeatingViewModel.GetHotWater,
+                ["get_componet"] = ContainerViewModel.GetComponent
+ 
+            };
         }
     }
 }

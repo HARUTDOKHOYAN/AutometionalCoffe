@@ -5,6 +5,7 @@ using System.ComponentModel;
 using Windows.UI.Xaml.Media;
 using Windows.UI;
 using System;
+using AutometionalCoffee.Model;
 
 namespace AutometionalCoffe.ViewModel
 {
@@ -121,15 +122,14 @@ namespace AutometionalCoffe.ViewModel
         }
         #endregion
 
-        public int GetHotWater(int count)
+        public async Task GetHotWater(CoffeConfigModel component)
         {
-            if (HotWaterCount <= count)
+            if (HotWaterCount <= component.WaterCount)
             {
-                _ = FillHotTank();
+                await FillHotTank();
             }
-            HotWaterCount -= count;
-            return count;
-        }
+            HotWaterCount -= component.WaterCount;
+        }   
 
         public event PropertyChangedEventHandler PropertyChanged;
 

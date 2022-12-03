@@ -124,6 +124,7 @@
     <Compile Include="Resources\CoffeeResources.cs" />
     <Compile Include="Systems\PaymentSystem.cs" />
     <Compile Include="Systems\SensorSystem.cs" />
+    <Compile Include="ViewModel\ContainerViewModel.cs" />
     <Compile Include="ViewModel\CoffeeWorkViewModel.cs" />
     <Compile Include="ViewModel\UserImputParametrViewModel.cs" />
     <Compile Include="ViewModel\WaterHeatingViewModel.cs" />
@@ -135,11 +136,14 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\UserDisplayViewModel.cs" />
+    <Compile Include="View\Control\ContainerControl.xaml.cs">
+      <DependentUpon>ContainerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Control\SensorControl.xaml.cs">
       <DependentUpon>SensorControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Control\UserDisplayControl.xaml.cs">
-      <DependentUpon>UserDisplayControl.xaml</DependentUpon>
+    <Compile Include="View\UserDisplayView.xaml.cs">
+      <DependentUpon>UserDisplayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Control\UserImputParametrControl.xaml.cs">
       <DependentUpon>UserImputParametrControl.xaml</DependentUpon>
@@ -180,11 +184,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\Control\ContainerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Control\SensorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Control\UserDisplayControl.xaml">
+    <Page Include="View\UserDisplayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

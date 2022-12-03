@@ -1,8 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using AutometionalCoffe.Resources;
 using AutometionalCoffe.ViewModel;
 using AutometionalCoffee.Systems;
-using AutometionalCoffe.Resources;
 using AutometionalCoffee.Model;
 using System.ComponentModel;
 using System;
@@ -20,6 +20,7 @@ namespace AutometionalCoffee.ViewModel
             _paymentSystem = paymentSystem;
             UserImputParametrsViewModel = new UserImputParametrsViewModel(_paymentSystem);
         }
+
         public ObservableCollection<CoffeConfigModel> CoffeeList
         {
             get { return _coffeeList; }
@@ -29,9 +30,15 @@ namespace AutometionalCoffee.ViewModel
                 NotifyPropertyChanged();
             }
         }
+
         public UserImputParametrsViewModel UserImputParametrsViewModel { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public void SetCoffeeParametrs(CoffeConfigModel config)
+        {
+            UserImputParametrsViewModel.Balance = config.Cost;
+            UserImputParametrsViewModel.CoffeeName = config.Name;
+        }
 
         public void ReturnChange()
         {

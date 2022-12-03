@@ -28,6 +28,7 @@ namespace AutometionalCoffe.View
             Unloaded+=UserDisplayView_Unloaded;
         }
 
+
         private void UserDisplayView_Unloaded(object sender, RoutedEventArgs e)
         {
             AddCoinButton.Click -=AddCoinButton_Click; 

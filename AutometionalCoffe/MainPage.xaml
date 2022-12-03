@@ -12,7 +12,7 @@
         </Grid.ColumnDefinitions>
         
             <!--Coffee coonfig control-->
-        <local1:UserDisplayControl 
+        <local1:UserDisplayView 
                 x:Name="UserDisplay"
                 Grid.Column="1"   
                 ViewModel="{x:Bind ViewModel.UserDisplayViewModel}"/>
