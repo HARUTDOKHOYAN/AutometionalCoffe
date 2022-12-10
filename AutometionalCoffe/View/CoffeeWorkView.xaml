@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:control="using:AutometionalCoffe.View.Control">
 
-    <Grid>
+    <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
@@ -22,17 +22,143 @@
             Margin="5"
             VerticalAlignment="Top"
             ViewModel="{x:Bind ViewModel.WaterHeatingViewModel}" />
-
-        <control:ContainerControl
+        <control:CoffeeGrindControl
             Grid.Row="0"
             Grid.Column="2"
             VerticalAlignment="Top"
-            ViewModel="{x:Bind ViewModel.ContainerViewModel}" />
+            ViewModel="{x:Bind ViewModel.CoffeeGrindViewModel}" />
 
-        <control:MilkContainerControl
+        <control:ContainerControl
             Grid.Row="1"
             Grid.Column="2"
             VerticalAlignment="Top"
+            ContainerName="Milk Container"
             ViewModel="{x:Bind ViewModel.MilkContainerViewModel}" />
+
+        <control:ContainerControl
+            Grid.Row="1"
+            Grid.Column="2"
+            VerticalAlignment="Bottom"
+            ContainerName="Sugar Container"
+            ViewModel="{x:Bind ViewModel.SugarContainerViewModel}" />
+
+        <Grid
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="0.12*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1.2*" />
+            </Grid.RowDefinitions>
+
+            <Grid
+                x:Name="WaterPipeline"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Rectangle
+                    Width="315"
+                    Height="10"
+                    Fill="{x:Bind ViewModel.WaterPipelineColor, Mode=OneWay}" />
+                <Rectangle
+                    Grid.Row="1"
+                    Width="10"
+                    Height="350"
+                    HorizontalAlignment="Right"
+                    Fill="{x:Bind ViewModel.WaterPipelineColor, Mode=OneWay}" />
+            </Grid>
+
+            <Grid
+                x:Name="CoffeeGrindPipeline"
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Rectangle
+                    Width="315"
+                    Height="10"
+                    Fill="{x:Bind ViewModel.CoffeeGrindPipelineColor, Mode=OneWay}" />
+                <Rectangle
+                    Grid.Row="1"
+                    Width="10"
+                    Height="350"
+                    HorizontalAlignment="Left"
+                    Fill="{x:Bind ViewModel.CoffeeGrindPipelineColor, Mode=OneWay}" />
+            </Grid>
+
+            <Grid
+                x:Name="MilkPipeline"
+                Grid.Row="1"
+                Grid.Column="2"
+                VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.13*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Rectangle
+                    Grid.Column="1"
+                    Width="315"
+                    Height="10"
+                    Fill="{x:Bind ViewModel.MilkPipelineColor, Mode=OneWay}" />
+                <Rectangle
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="10"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Fill="{x:Bind ViewModel.MilkPipelineColor, Mode=OneWay}" />
+            </Grid>
+
+            <Grid
+                x:Name="SugerPipeline"
+                Grid.Row="2"
+                Grid.Column="2"
+                VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Rectangle
+                    Grid.Column="1"
+                    Width="315"
+                    Height="10"
+                    Fill="{x:Bind ViewModel.SugarPipelineColor, Mode=OneWay}" />
+                <Rectangle
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Width="10"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Fill="{x:Bind ViewModel.SugarPipelineColor, Mode=OneWay}" />
+            </Grid>
+
+        </Grid>
+
+        <Image
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="250"
+            Source="/Assets/cup.png" />
     </Grid>
 </UserControl>

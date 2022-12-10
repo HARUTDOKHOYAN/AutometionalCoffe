@@ -17,7 +17,7 @@ namespace AutometionalCoffee
         public CoffeeWorkViewModel CoffeeWorkViewModel { get; set; }
 
             
-        public async Task CoffeeRegister(CoffeConfigModel sender)
+        public async Task CoffeeRegister(CoffeeConfigModel sender)
         {
             if (!_paymentSystem.PayForCoffee(sender.Cost))
                 return;

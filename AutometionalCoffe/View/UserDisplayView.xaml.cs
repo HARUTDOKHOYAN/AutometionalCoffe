@@ -8,7 +8,7 @@ namespace AutometionalCoffe.View.Control
 {
     public sealed partial class UserDisplayView : UserControl
     {
-        private CoffeConfigModel config;
+        private CoffeeConfigModel config;
         public UserDisplayView()
         {
             this.InitializeComponent();
@@ -17,7 +17,7 @@ namespace AutometionalCoffe.View.Control
 
 
 
-        public delegate void CoffeeHandler(CoffeConfigModel sender);
+        public delegate void CoffeeHandler(CoffeeConfigModel sender);
         public event CoffeeHandler CoffeeAdd;
 
         public UserDisplayViewModel ViewModel
@@ -31,7 +31,7 @@ namespace AutometionalCoffe.View.Control
 
         private void CoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-            config = (sender as Button).DataContext as CoffeConfigModel;
+            config = (sender as Button).DataContext as CoffeeConfigModel;
             ViewModel.SetCoffeeParametrs(config);
         }
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AutometionalCoffe.ViewModel
 {
-    public class MilkContainerViewModel
+    public class SugarContainerViewModel
     {
+
     }
 }

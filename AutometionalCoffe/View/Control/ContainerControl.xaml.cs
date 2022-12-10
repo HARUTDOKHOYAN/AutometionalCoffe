@@ -2,6 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 
+
 namespace AutometionalCoffe.View.Control
 {
     public sealed partial class ContainerControl : UserControl
@@ -13,12 +14,24 @@ namespace AutometionalCoffe.View.Control
 
         public ContainerViewModel ViewModel
         {
-            get { return (ContainerViewModel)GetValue(ViewModelProperty); }
-            set { SetValue(ViewModelProperty, value); }
+            get { return (ContainerViewModel)GetValue(VIewModelProperty); }
+            set { SetValue(VIewModelProperty, value); }
         }
 
-        public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register("ViewModel", typeof(ContainerViewModel), typeof(ContainerControl), new PropertyMetadata(null));
+        public static readonly DependencyProperty VIewModelProperty =
+            DependencyProperty.Register("ViewModel", typeof(int), typeof(ContainerControl), new PropertyMetadata(null));
+
+
+
+        public string ContainerName
+        {
+            get { return (string)GetValue(ContainerNameProperty); }
+            set { SetValue(ContainerNameProperty, value); }
+        }
+
+        public static readonly DependencyProperty ContainerNameProperty =
+            DependencyProperty.Register("ContainerName", typeof(string), typeof(ContainerControl), new PropertyMetadata(0));
+
 
 
     }

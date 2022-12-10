@@ -4,8 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:modle1="using:AutometionalCoffee.Model"
-    xmlns:view="using:AutometionalCoffe.View"
+    xmlns:view="using:AutometionalCoffe.View" xmlns:modle1="using:AutometionalCoffee.Model"
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
@@ -40,7 +39,7 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="modle1:CoffeConfigModel">
+                <DataTemplate x:DataType="modle1:CoffeeConfigModel">
                     <ListViewItem>
                         <Grid Width="100" Height="60">
                             <Grid.RowDefinitions>

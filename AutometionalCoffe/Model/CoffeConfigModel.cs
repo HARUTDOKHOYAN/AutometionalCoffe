@@ -2,7 +2,7 @@
 
 namespace AutometionalCoffee.Model
 {
-    public class CoffeConfigModel
+    public class CoffeeConfigModel
     {
         public string Name { get; set; }
 
@@ -13,6 +13,8 @@ namespace AutometionalCoffee.Model
         public int SugarValue { get; set; }
 
         public int CoffeeCount { get; set; }
+
+        public int MilkCount { get; set; }
 
         public List<string> CoffeeActions { get; set; }
     }

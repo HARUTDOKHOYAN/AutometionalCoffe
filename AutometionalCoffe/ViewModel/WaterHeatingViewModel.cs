@@ -122,14 +122,19 @@ namespace AutometionalCoffe.ViewModel
         }
         #endregion
 
-        public  Task GetHotWater(CoffeConfigModel component)
+        public async  Task GetHotWater(CoffeeConfigModel component)
         {
             if (HotWaterCount <= component.WaterCount)
             {
                 _ = FillHotTank();
             }
-            HotWaterCount -= component.WaterCount;
-            return Task.CompletedTask;
+            var water =  component.WaterCount;
+            while (water >= 0)
+            {
+                HotWaterCount-=10;
+                water -= 10;
+                await Task.Delay(100);
+            }
         }   
 
         public event PropertyChangedEventHandler PropertyChanged;

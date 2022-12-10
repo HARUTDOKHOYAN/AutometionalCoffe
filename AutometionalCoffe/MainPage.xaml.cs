@@ -26,7 +26,7 @@ namespace AutometionalCoffee
             UserDisplay.CoffeeAdd-=CoffeeConfig_CoffeeAdd;
         }
 
-        private async void CoffeeConfig_CoffeeAdd(CoffeConfigModel sender)
+        private async void CoffeeConfig_CoffeeAdd(CoffeeConfigModel sender)
         {
           await  ViewModel.CoffeeRegister(sender);
         }

@@ -12,7 +12,7 @@ namespace AutometionalCoffee.ViewModel
     public class UserDisplayViewModel : INotifyPropertyChanged
     {
         private readonly PaymentSystem _paymentSystem;
-        private ObservableCollection<CoffeConfigModel> _coffeeList;
+        private ObservableCollection<CoffeeConfigModel> _coffeeList;
 
         public UserDisplayViewModel(PaymentSystem paymentSystem)
         {
@@ -21,7 +21,7 @@ namespace AutometionalCoffee.ViewModel
             UserImputParametrsViewModel = new UserImputParametrsViewModel(_paymentSystem);
         }
 
-        public ObservableCollection<CoffeConfigModel> CoffeeList
+        public ObservableCollection<CoffeeConfigModel> CoffeeList
         {
             get { return _coffeeList; }
             set
@@ -34,7 +34,7 @@ namespace AutometionalCoffee.ViewModel
         public UserImputParametrsViewModel UserImputParametrsViewModel { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void SetCoffeeParametrs(CoffeConfigModel config)
+        public void SetCoffeeParametrs(CoffeeConfigModel config)
         {
             UserImputParametrsViewModel.Balance = config.Cost;
             UserImputParametrsViewModel.CoffeeName = config.Name;

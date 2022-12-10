@@ -3,79 +3,51 @@ using AutometionalCoffee.Model;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using Windows.UI.Xaml.Media;
-using Windows.UI;
 using System;
+using Windows.UI;
 
 namespace AutometionalCoffe.ViewModel
 {
-
     public class ContainerViewModel : INotifyPropertyChanged
     {
-        private string _coffeeName;
-        private int _coffeeContainerCount;
-        private SolidColorBrush _grindSensorColor = new SolidColorBrush();
-        private SolidColorBrush _coffeeArrowColoe = new SolidColorBrush();
+        private int _containerCount;
+        private SolidColorBrush _containerWorkSensorColor = new SolidColorBrush();
 
-
-        public ContainerViewModel()
+        public ContainerViewModel(int containerControl)
         {
-            CoffeeContainerCount = 400;
-            CoffeeName = "None";
-            CoffeeArrowColor.Color = Color.FromArgb(255, 0, 0, 0);
-            GrindSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
+            ContainerCount = containerControl;
+            ContainerWorkSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public SolidColorBrush GrindSensorColor
+
+        public SolidColorBrush ContainerWorkSensorColor
         {
-            get => _grindSensorColor;
+            get { return _containerWorkSensorColor; }
             set
             {
-                _grindSensorColor = value;
-                NotifyPropertyChanged();
-            }
-        }
-        public SolidColorBrush CoffeeArrowColor
-        {
-            get => _coffeeArrowColoe;
-            set
-            {
-                _coffeeArrowColoe = value;
+                _containerWorkSensorColor = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public int CoffeeContainerCount
+        public int ContainerCount
         {
-            get { return _coffeeContainerCount; }
+            get { return _containerCount; }
             set
             {
-                _coffeeContainerCount = value;
+                _containerCount = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public string CoffeeName
+        public async Task GetComponent(CoffeeConfigModel config)
         {
-            get { return _coffeeName; }
-            set
-            {
-                _coffeeName = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-        public async Task GetComponent(CoffeConfigModel component)
-        {
-            CoffeeName= component.Name;
-            CoffeeContainerCount -= component.CoffeeCount;
-            CoffeeArrowColor.Color = Color.FromArgb(255, 200, 23, 23);
-            await Task.Delay(component.CoffeeCount*300);
-            CoffeeArrowColor.Color = Color.FromArgb(255, 0, 0, 0);
-            GrindSensorColor.Color = Color.FromArgb(255, 0, 255, 0);
-            await Task.Delay(2500);
-            GrindSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
+            ContainerWorkSensorColor.Color = Color.FromArgb(255, 0, 255, 0);
+            await Task.Delay(1000);
+            ContainerCount -= config.MilkCount;
+            ContainerWorkSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
         }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
