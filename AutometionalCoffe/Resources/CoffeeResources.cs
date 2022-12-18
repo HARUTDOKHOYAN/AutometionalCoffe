@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel; 
+using System.Collections.Generic;
 using AutometionalCoffee.Model;
 
 namespace AutometionalCoffe.Resources
@@ -12,8 +12,9 @@ namespace AutometionalCoffe.Resources
                 {
                     Name = "Coffee1", 
                     Cost = 150,
-                    CoffeeActions = new List<string>{ "get_hotwater" , "get_componet" , "get_milk" , "get_sugar" },
+                    CoffeeActions = new List<string>{ "get_hotwater" , "get_componet" , "get_milk" , "get_sugar" , "get_chocolate"},
                     CoffeeCount = 8,
+                    ChocolatrCount= 18,
                     MilkCount= 18,
                     WaterCount= 200,
                 },

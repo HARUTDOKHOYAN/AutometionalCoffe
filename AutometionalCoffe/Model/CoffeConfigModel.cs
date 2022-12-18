@@ -16,6 +16,8 @@ namespace AutometionalCoffee.Model
 
         public int MilkCount { get; set; }
 
+        public int ChocolatrCount { get; set; }
+
         public List<string> CoffeeActions { get; set; }
     }
 }

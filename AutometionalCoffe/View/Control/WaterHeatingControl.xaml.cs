@@ -31,7 +31,7 @@ namespace AutometionalCoffe.View.Control
         }
 
         public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register("MyProperty", typeof(WaterHeatingViewModel), typeof(WaterHeatingControl), new PropertyMetadata(null));
+            DependencyProperty.Register("ViewModel", typeof(WaterHeatingViewModel), typeof(WaterHeatingControl), new PropertyMetadata(null));
 
 
     }

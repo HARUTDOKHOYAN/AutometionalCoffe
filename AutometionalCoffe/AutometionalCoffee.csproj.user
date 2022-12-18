@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
+    <Source>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</Source>
+    <SmallTileSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</MediumTileSource>
+    <WideTileSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</WideTileSource>
+    <LargeTileSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</LargeTileSource>
+    <AppIconSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Harutyun\Desktop\Projects\AutometionalCoffe\AutometionalCoffe\Assets\icon.png</PackageLogoSource>
   </PropertyGroup>
 </Project>

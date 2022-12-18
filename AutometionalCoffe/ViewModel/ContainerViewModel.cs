@@ -42,11 +42,11 @@ namespace AutometionalCoffe.ViewModel
             }
         }
 
-        public async Task GetComponent(CoffeeConfigModel config)
+        public async Task GetComponent(int config)
         {
             ContainerWorkSensorColor.Color = Color.FromArgb(255, 0, 255, 0);
             await Task.Delay(1000);
-            ContainerCount -= config.MilkCount;
+            ContainerCount -= config;
             ContainerWorkSensorColor.Color = Color.FromArgb(255, 255, 0, 0);
         }
 

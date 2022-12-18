@@ -19,7 +19,7 @@ namespace AutometionalCoffe.View
         }
 
         public static readonly DependencyProperty ViewModelProperty =
-            DependencyProperty.Register("MyProperty", typeof(CoffeeWorkViewModel), typeof(CoffeeWorkView), new PropertyMetadata(null));
+            DependencyProperty.Register("ViewModel", typeof(CoffeeWorkViewModel), typeof(CoffeeWorkView), new PropertyMetadata(null));
 
 
     }

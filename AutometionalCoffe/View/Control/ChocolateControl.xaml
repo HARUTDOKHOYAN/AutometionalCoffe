@@ -1,0 +1,39 @@
+﻿<UserControl
+    x:Class="AutometionalCoffe.View.Control.ChocolateControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:control="using:AutometionalCoffe.View.Control">
+
+    <Grid
+        MaxHeight="250"
+        Padding="5"
+        BorderBrush="Black"
+        BorderThickness="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <control:ContainerControl
+            Width="250"
+            VerticalAlignment="Top"
+            ContainerName="Chocolate Tank"
+            ViewModel="{x:Bind ViewModel.ChocolateContainer}" />
+        <TextBlock
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="65"
+            Foreground="{x:Bind ViewModel.FillChocolateArrowColor, Mode=OneWay}"
+            Text="⇓" />
+        <Grid
+            Grid.Row="2"
+            Width="210"
+            Height="50">
+            <Border BorderBrush="Black" BorderThickness="3">
+                <control:SensorControl SensorColor="{x:Bind ViewModel.ChocolateWarmingUpSensor, Mode=OneWay}" SensorName="ChocolateWarmingUpSensor" />
+            </Border>
+        </Grid>
+        <Grid />
+    </Grid>
+</UserControl>

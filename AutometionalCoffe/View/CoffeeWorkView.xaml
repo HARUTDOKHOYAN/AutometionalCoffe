@@ -8,8 +8,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
@@ -22,6 +23,13 @@
             Margin="5"
             VerticalAlignment="Top"
             ViewModel="{x:Bind ViewModel.WaterHeatingViewModel}" />
+
+        <control:ChocolateControl
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            ViewModel="{x:Bind ViewModel.ChocolateViewModel}" />
+
         <control:CoffeeGrindControl
             Grid.Row="0"
             Grid.Column="2"
@@ -79,6 +87,33 @@
             </Grid>
 
             <Grid
+                x:Name="ChocolatePipeline"
+                Grid.Row="2"
+                Grid.Column="0"
+                VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.10*" />
+                </Grid.ColumnDefinitions>
+                <Rectangle
+                    Grid.Column="0"
+                    Width="315"
+                    Height="10"
+                    Fill="{x:Bind ViewModel.ChocoladPipelineColor, Mode=OneWay}" />
+                <Rectangle
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Width="10"
+                    Height="50"
+                    HorizontalAlignment="Right"
+                    Fill="{x:Bind ViewModel.ChocoladPipelineColor, Mode=OneWay}" />
+            </Grid>
+
+            <Grid
                 x:Name="CoffeeGrindPipeline"
                 Grid.RowSpan="2"
                 Grid.Column="2"
@@ -109,7 +144,7 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.13*" />
+                    <ColumnDefinition Width="0.10*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Rectangle
@@ -158,7 +193,7 @@
         <Image
             Grid.Row="2"
             Grid.Column="1"
-            Width="250"
+            Width="230"
             Source="/Assets/cup.png" />
     </Grid>
 </UserControl>

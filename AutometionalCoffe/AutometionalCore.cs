@@ -23,7 +23,6 @@ namespace AutometionalCoffee
                 return;
             UserDisplayViewModel.ReturnChange();
 
-
             foreach (var action in sender.CoffeeActions)
             {
                 await CoffeeWorkViewModel.ExistActions[action].Invoke(sender);
