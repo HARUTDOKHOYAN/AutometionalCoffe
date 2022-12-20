@@ -5,74 +5,129 @@
     xmlns:modle1="using:AutometionalCoffee.Model"
     xmlns:view="using:AutometionalCoffe.View">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="5*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <!--  CoffeeList  -->
-        <TextBlock
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Text="Coffee List" />
-        <ListView
-            x:Name="CoffeeList"
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            IsItemClickEnabled="True"
-            ItemsSource="{x:Bind ViewModel.CoffeeList}"
-            ScrollViewer.HorizontalScrollMode="Disabled"
-            ScrollViewer.VerticalScrollMode="Disabled">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <ItemsWrapGrid MaximumRowsOrColumns="2" Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="modle1:CoffeeConfigModel">
-                    <ListViewItem>
-                        <Grid Width="100" Height="60">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Button
-                                x:Name="CoffeeButton"
-                                Grid.Row="0"
-                                Click="CoffeeButton_Click"
-                                Content="{x:Bind Name}" />
-                            <StackPanel Grid.Row="1">
-                                <TextBlock Text="{x:Bind Cost}" />
-                            </StackPanel>
+    <UserControl.Resources>
+        <Style x:Key="CoffeeListStyle" TargetType="ListViewItem">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="140" />
+            <Setter Property="Height" Value="60" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Grid>
+                            <ContentPresenter Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" />
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver" />
+                                    <VisualState x:Name="Pressed" />
+                                    <VisualState x:Name="Selected" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
                         </Grid>
-                    </ListViewItem>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <Grid Grid.Row="2" Grid.Column="1">
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="#DDA15E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*" />
+            <RowDefinition Height="AUTO" />
+            <RowDefinition Height="0.6*" />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Height="200"
+            VerticalAlignment="Top"
+            Source="/Assets/UserDisplayUp.png" />
+        <Image
+            Grid.Row="0"
+            Width="200"
+            VerticalAlignment="Center"
+            Source="/Assets/Coffee_List.png" />
+        <Grid
+            Grid.Row="1"
+            Padding="10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Canvas.ZIndex="9">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--  CoffeeList  -->
+            <ListView
+                x:Name="CoffeeList"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                IsItemClickEnabled="True"
+                ItemsSource="{x:Bind ViewModel.CoffeeList}"
+                ScrollViewer.HorizontalScrollMode="Disabled"
+                ScrollViewer.VerticalScrollMode="Disabled">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid MaximumRowsOrColumns="2" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="modle1:CoffeeConfigModel">
+                        <ListViewItem Style="{StaticResource CoffeeListStyle}">
+                            <Grid Width="100">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Button
+                                    x:Name="CoffeeButton"
+                                    Grid.Row="0"
+                                    Width="100"
+                                    Click="CoffeeButton_Click"
+                                    Content="{x:Bind Name}"
+                                    CornerRadius="15" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    HorizontalAlignment="Center"
+                                    Text="{x:Bind Cost}" />
+                            </Grid>
+                        </ListViewItem>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <Button
                 x:Name="GetCoinButton"
-                Grid.Row="1"
+                Width="90"
+                Margin="10"
+                FontSize="15"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                Content="Accept" />
-        </Grid>
+                Content="Accept"
+                CornerRadius="15" />
 
-        <!--  User input control  -->
-        <view:UserImputParametrControl
+
+            <!--  User input control  -->
+            <view:UserImputParametrControl
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                ViewModel="{x:Bind ViewModel.UserImputParametrsViewModel}" />
+        </Grid>
+        <Image
             Grid.Row="2"
-            Grid.ColumnSpan="2"
-            ViewModel="{x:Bind ViewModel.UserImputParametrsViewModel}" />
+            VerticalAlignment="Bottom"
+            Source="/Assets/UserDisplayDown.png" />
+        <Image
+            Grid.Row="2"
+            Width="100"
+            VerticalAlignment="Bottom"
+            Source="/Assets/Icon.png" />
     </Grid>
 </UserControl>

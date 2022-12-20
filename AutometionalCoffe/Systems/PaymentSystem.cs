@@ -1,26 +1,23 @@
 ﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System;
 
 namespace AutometionalCoffee.Systems
 {
     public class PaymentSystem
     {
         private int _balance;
-        
-        public event PropertyChangedEventHandler PropertyChanged;
+        private const int defoltBalance = 0;
 
         public void AddCoin(int coin)
         {
             _balance += coin;
         }
-        
+
         public bool PayForCoffee(int coffeeValue)
         {
-            var isCanePay =  _balance - coffeeValue >= 0;
+            var isCanePay = _balance - coffeeValue >= 0;
             if (isCanePay)
             {
-                _balance -= coffeeValue;    
+                _balance -= coffeeValue;
                 return isCanePay;
             }
             return isCanePay;
@@ -28,19 +25,14 @@ namespace AutometionalCoffee.Systems
 
         public int GetBance()
         {
-            return _balance;    
+            return _balance;
         }
 
         public int GetChange()
         {
             var resalt = _balance;
-            _balance = 0;
-            return resalt; 
+            _balance = defoltBalance;
+            return resalt;
         }
-
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    } 
+    }
 }

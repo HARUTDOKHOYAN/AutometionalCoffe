@@ -12,6 +12,7 @@ namespace AutometionalCoffe.ViewModel
     public class CoffeeGrindViewModel : INotifyPropertyChanged
     {
         private string _coffeeName;
+        private const int difaultCoffeerCoun = 400;
         private int _coffeeContainerCount;
         private SolidColorBrush _grindSensorColor = new SolidColorBrush();
         private SolidColorBrush _coffeeArrowColoe = new SolidColorBrush();
@@ -19,7 +20,7 @@ namespace AutometionalCoffe.ViewModel
 
         public CoffeeGrindViewModel()
         {
-            CoffeeContainerCount = 400;
+            CoffeeContainerCount = difaultCoffeerCoun;
             CoffeeName = "None";
             CoffeeArrowColor.Color = Color.FromArgb(255, 0, 0, 0);
             GrindSensorColor.Color = Color.FromArgb(255, 255, 0, 0);

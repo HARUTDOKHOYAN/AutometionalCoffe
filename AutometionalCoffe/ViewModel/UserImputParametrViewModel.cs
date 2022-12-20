@@ -3,26 +3,26 @@ using AutometionalCoffee.Systems;
 using AutometionalCoffe.Systems;
 using System.ComponentModel;
 using Windows.UI.Xaml.Media;
-using Windows.UI;   
+using Windows.UI;
 using System;
 
 namespace AutometionalCoffe.ViewModel
 {
-    public class UserImputParametrsViewModel:INotifyPropertyChanged
+    public class UserImputParametrsViewModel : INotifyPropertyChanged
     {
         private SensorSystem _sensorSystem = SensorSystem.Instens;
         private SolidColorBrush _coinSensorColoe;
         private PaymentSystem _payment;
-        private int _balance;
         private string _coffeeName;
-        private int _change;
         private int _sugarValue;
+        private int _balance;
+        private int _change;
 
         public UserImputParametrsViewModel(PaymentSystem payment)
         {
             _payment = payment;
             CoinSensorColor = new SolidColorBrush();
-            CoinSensorColor.Color =  Color.FromArgb(255,255,255,0);
+            CoinSensorColor.Color =  Color.FromArgb(255, 255, 255, 0);
             SugarValue = 3;
             _coffeeName = "Not selected";
         }
@@ -32,7 +32,7 @@ namespace AutometionalCoffe.ViewModel
         public string CoffeeName
         {
             get { return _coffeeName; }
-            set 
+            set
             {
                 _coffeeName = value;
                 NotifyPropertyChanged();
@@ -42,8 +42,8 @@ namespace AutometionalCoffe.ViewModel
         public int Balance
         {
             get { return _balance; }
-            set 
-            { 
+            set
+            {
                 _balance = value;
                 NotifyPropertyChanged();
             }

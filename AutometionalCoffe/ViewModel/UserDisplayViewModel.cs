@@ -16,8 +16,8 @@ namespace AutometionalCoffee.ViewModel
 
         public UserDisplayViewModel(PaymentSystem paymentSystem)
         {
-            CoffeeList = CoffeeResources.CoffeeList;
             _paymentSystem = paymentSystem;
+            CoffeeList = CoffeeResource.CoffeeList
             UserImputParametrsViewModel = new UserImputParametrsViewModel(_paymentSystem);
         }
 

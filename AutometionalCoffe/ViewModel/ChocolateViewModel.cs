@@ -10,6 +10,7 @@ namespace AutometionalCoffe.ViewModel
 {
     public class ChocolateViewModel : INotifyPropertyChanged
     {
+        private const int delayTime = 1000;
         private SolidColorBrush _fillChocolateArrowColor = new SolidColorBrush();
         private SolidColorBrush _chocolateWarmingUpSensor = new SolidColorBrush();
 
@@ -49,7 +50,7 @@ namespace AutometionalCoffe.ViewModel
             await ChocolateContainer.GetComponent(config.ChocolatrCount);
             FillChocolateArrowColor.Color = Color.FromArgb(255, 0, 0, 0);
             ChocolateWarmingUpSensor.Color = Color.FromArgb(255, 0, 255, 0);
-            await Task.Delay(1000);
+            await Task.Delay(delayTime);
             ChocolateWarmingUpSensor.Color = Color.FromArgb(255, 255, 0, 0);
         }
 

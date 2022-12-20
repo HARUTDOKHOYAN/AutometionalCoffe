@@ -13,30 +13,54 @@
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
+                <RowDefinition Height="30" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
-                <TextBlock FontSize="17  " Text="Balance" />
-                <TextBlock Text="{x:Bind ViewModel.Balance, Mode=OneWay}" />
-                <TextBlock FontSize="17" Text="CoffeeName" />
-                <TextBlock Text="{x:Bind ViewModel.CoffeeName, Mode=OneWay}" />
-            </StackPanel>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="22  "
+                    Text="Balance" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="{x:Bind ViewModel.Balance, Mode=OneWay}" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="22"
+                    Text="CoffeeName" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{x:Bind ViewModel.CoffeeName, Mode=OneWay}" />
+            </Grid>
 
-            <TextBlock
-                Grid.Row="2"
+            <Image
+                Grid.Row="3"
+                Width="30"
                 Margin="50,0,0,0"
                 HorizontalAlignment="Left"
-                Text="Sugar" />
+                Source="/Assets/Sugar_icon.png" />
             <TextBlock
-                Grid.Row="2"
+                Grid.Row="3"
                 Margin="0,0,50,0"
                 HorizontalAlignment="Right"
                 Text="{x:Bind ViewModel.SugarValue, Mode=OneWay}" />
             <Slider
-                Grid.Row="3"
+                Grid.Row="4"
                 Width="250"
                 AutomationProperties.Name="simple slider"
                 Maximum="6"
@@ -66,20 +90,24 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Margin="0,0,15,0" />
+                Margin="0,0,15,0"
+                Background="Beige" />
             <control:SensorControl
                 Grid.Row="2"
-                Grid.Column="0"
                 Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
                 SensorColor="{x:Bind ViewModel.CoinSensorColor, Mode=OneWay}"
                 SensorName="CoinSensor" />
             <TextBlock
-                Grid.Row="3"
+                Grid.Row="2"
                 Grid.Column="1"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"
                 Text="Change" />
             <TextBlock
-                Grid.Row="4"
-                Grid.Column="1"
+                Grid.Row="2"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
                 Text="{x:Bind ViewModel.Change, Mode=OneWay}" />
         </Grid>
     </Grid>

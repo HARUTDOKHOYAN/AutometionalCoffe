@@ -2,7 +2,7 @@
 using AutometionalCoffee.Model;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
-
+using AutometionalCoffe.Resources;
 
 namespace AutometionalCoffe.View.Control
 {
@@ -40,7 +40,7 @@ namespace AutometionalCoffe.View.Control
             config.SugarValue = ViewModel.UserImputParametrsViewModel.SugarValue;
             CoffeeAdd.Invoke(config);
         }
-        private void UserDisplayView_Loaded(object sender, RoutedEventArgs e)
+        private  void UserDisplayView_Loaded(object sender, RoutedEventArgs e)
         {
             GetCoinButton.Click +=GetCoinButton_Click;
             Unloaded +=UserDisplayView_Unloaded;

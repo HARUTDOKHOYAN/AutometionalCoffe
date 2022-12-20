@@ -1,0 +1,86 @@
+[
+{
+  "name": "ESPRESSO",
+  "cost": "150",
+  "water_count": "22",
+  "coffee_count": "8",
+  "milk_count": "0",
+  "chocoolatr_count": "0",
+  "coffee_actioons": [
+    "get_hotwater\" , \"get_componet\" , \"get_sugar"
+  ]
+},
+{
+  "name": "MOCHA",
+  "cost": "300",
+  "water_count": "22",
+  "coffee_count": "8",
+  "milk_count": "140",
+  "chocoolatr_count": "50",
+  "coffee_actioons": [
+    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk\" , \"get_chocolate"
+  ]
+},
+{
+  "name": "LATTE",
+  "cost": "300",
+  "water_count": "22",
+  "coffee_count": "8",
+  "milk_count": "250",
+  "chocoolatr_count": "50",
+  "coffee_actioons": [
+    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk\"  , \"get_chocolate" ]
+},
+{
+  "name": "CAPPUCCINO",
+  "cost": "250",
+  "water_count": "22",
+  "coffee_count": "8",
+  "milk_count": "140",
+  "chocoolatr_count": "0",
+  "coffee_actioons": [
+    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk"  ]
+},
+{
+  "name": "HOTCHOCOLATE",
+  "cost": "200",
+  "water_count": "100",
+  "coffee_count": "0",
+  "milk_count": "100",
+  "chocoolatr_count": "60",
+  "coffee_actioons": [
+    "get_hotwater\" ,  \"get_sugar\",  \"get_milk\" , \"get_chocolate"
+  ]
+},
+{
+  "name": "BLACKCOFFEE",
+  "cost": "100",
+  "water_count": "50",
+  "coffee_count": "25",
+  "milk_count": "0",
+  "chocoolatr_count": "0",
+  "coffee_actioons": [
+    "get_hotwater\" ,  \"get_componet\" , \"get_sugar" ]
+},
+{
+  "name": "C.W.M.",
+  "cost": "150",
+  "water_count": "80",
+  "coffee_count": "8",
+  "milk_count": "70",
+  "chocoolatr_count": "0",
+  "coffee_actioons": [
+    "get_hotwater\" ,  \"get_componet\",\"get_milk\", \"get_sugar" ]
+},
+{
+  "name": "NESCAFE",
+  "cost": "150",
+  "water_count": "100",
+  "coffee_count": "18",
+  "milk_count": "0",
+  "chocoolatr_count": "0",
+  "coffee_actioons": [
+    "get_hotwater\" ,  \"get_componet\", \"get_sugar" ]
+},
+
+]

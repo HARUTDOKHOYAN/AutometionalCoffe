@@ -1,6 +1,6 @@
-﻿using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
 
 
 namespace AutometionalCoffe.View.Control
@@ -11,8 +11,6 @@ namespace AutometionalCoffe.View.Control
         {
             this.InitializeComponent();
         }
-
-
 
         public string SensorName
         {

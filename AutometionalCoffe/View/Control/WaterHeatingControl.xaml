@@ -9,9 +9,10 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
     <Grid
-        Padding="3"
-        BorderBrush="Black"
-        BorderThickness="2">
+        Padding="5"
+        Background="#654536"
+        BorderBrush="#DDA15E"
+        BorderThickness="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="Auto" />
@@ -32,8 +33,9 @@
             Height="100"
             Margin="5"
             HorizontalAlignment="Center"
-            BorderBrush="Black"
-            BorderThickness="3">
+            Background="#654536"
+            BorderBrush="#DDA15E"
+            BorderThickness="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -45,6 +47,7 @@
                 Text="WaterContainer" />
             <TextBlock
                 Grid.Row="1"
+                FontSize="20"
                 HorizontalAlignment="Center"
                 Text="{x:Bind ViewModel.WaterCount, Mode=OneWay}" />
             <local:SensorControl
@@ -69,8 +72,9 @@
             Width="130"
             Height="70"
             HorizontalAlignment="Center"
-            BorderBrush="Black"
-            BorderThickness="3">
+            Background="#654536"
+            BorderBrush="#DDA15E"
+            BorderThickness="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -81,6 +85,7 @@
                 HorizontalAlignment="Center"
                 Text="HotWaterContainer" />
             <TextBlock
+                FontSize="18"
                 Grid.Row="1"
                 HorizontalAlignment="Center"
                 Text="{x:Bind ViewModel.HotWaterCount, Mode=OneWay}" />
@@ -99,11 +104,12 @@
             Grid.Row="1"
             Grid.Column="1"
             Width="196"
-            Padding="0"
             Height="40"
+            Padding="0"
             HorizontalAlignment="Left"
-            BorderBrush="Black"
-            BorderThickness="3">
+            Background="#654536"
+            BorderBrush="#DDA15E"
+            BorderThickness="5">
 
             <local:SensorControl
                 Grid.Row="2"
@@ -120,8 +126,9 @@
             Width="140"
             Height="40"
             HorizontalAlignment="Right"
-            BorderBrush="Black"
-            BorderThickness="3">
+            Background="#654536"
+            BorderBrush="#DDA15E"
+            BorderThickness="5">
 
             <local:SensorControl
                 HorizontalAlignment="Right"

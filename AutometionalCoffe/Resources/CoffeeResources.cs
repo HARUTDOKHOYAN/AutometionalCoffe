@@ -1,58 +1,27 @@
-﻿using System.Collections.ObjectModel; 
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using AutometionalCoffee.Model;
+using Newtonsoft.Json;
+using System.IO;
+using System;
+using System.Diagnostics;
+using Windows.Storage;
+using System.Threading.Tasks;
 
 namespace AutometionalCoffe.Resources
 {
-    public class CoffeeResources
+    public class CoffeeResource
     {
-        public static ObservableCollection<CoffeeConfigModel> CoffeeList = new ObservableCollection<CoffeeConfigModel>()
+        public static ObservableCollection<CoffeeConfigModel> CoffeeList { get; set; }
+        public async static void LoadCoffeeList()
         {
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee1", 
-                    Cost = 150,
-                    CoffeeActions = new List<string>{ "get_hotwater" , "get_componet" , "get_milk" , "get_sugar" , "get_chocolate"},
-                    CoffeeCount = 8,
-                    ChocolatrCount= 18,
-                    MilkCount= 18,
-                    WaterCount= 200,
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee2", 
-                    Cost = 200
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee3", 
-                    Cost = 100
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee4", 
-                    Cost = 250
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee5", 
-                    Cost = 150
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee6",
-                    Cost = 300
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee7",
-                    Cost = 100
-                },
-                new CoffeeConfigModel
-                {
-                    Name = "Coffee8",
-                    Cost = 200
-                },
-        };
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/coffee.txt"));
+            using (var inputStream = await file.OpenReadAsync())
+            using (var classicStream = inputStream.AsStreamForRead())
+            using (var streamReader = new StreamReader(classicStream))
+            {
+                string json = streamReader.ReadToEnd();
+                CoffeeList = JsonConvert.DeserializeObject<ObservableCollection<CoffeeConfigModel>>(json);
+            }
+        }
     }
 }

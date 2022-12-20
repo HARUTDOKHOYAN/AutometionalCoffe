@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutometionalCoffe.Resources;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -57,6 +58,7 @@ namespace AutometionalCoffee
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+                
             }
 
             if (e.PrelaunchActivated == false)
@@ -90,7 +92,7 @@ namespace AutometionalCoffee
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity

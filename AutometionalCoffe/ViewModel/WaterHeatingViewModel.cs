@@ -20,7 +20,7 @@ namespace AutometionalCoffe.ViewModel
         private SolidColorBrush _tempSensorColor = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
         private int _hotWaterCount;
         private int _waterCount;
-        private int _temp ;
+        private int _temp;
         #endregion
 
         public WaterHeatingViewModel()
@@ -122,20 +122,20 @@ namespace AutometionalCoffe.ViewModel
         }
         #endregion
 
-        public async  Task GetHotWater(CoffeeConfigModel component)
+        public async Task GetHotWater(CoffeeConfigModel component)
         {
             if (HotWaterCount <= component.WaterCount)
             {
                 _ = FillHotTank();
             }
-            var water =  component.WaterCount;
+            var water = component.WaterCount;
             while (water >= 0)
             {
                 HotWaterCount-=10;
                 water -= 10;
                 await Task.Delay(100);
             }
-        }   
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -166,9 +166,9 @@ namespace AutometionalCoffe.ViewModel
         private async Task MonitoringTemp()
         {
             var minTemp = 90;
-            while (true) 
+            while (true)
             {
-                if(HotWaterCount == 0) 
+                if (HotWaterCount == 0)
                 {
                     Temp = 0;
                     HeaterWorkColor.Color = Color.FromArgb(255, 0, 0, 0);
@@ -178,7 +178,7 @@ namespace AutometionalCoffe.ViewModel
                 {
                     minTemp = 90;
                     TempSensorColor.Color = Color.FromArgb(255, 0, 255, 0);
-                    HeaterWorkColor.Color = Color.FromArgb(255,255,0,0); 
+                    HeaterWorkColor.Color = Color.FromArgb(255, 255, 0, 0);
                     Temp+=2;
                 }
                 else

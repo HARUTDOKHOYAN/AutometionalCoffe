@@ -128,7 +128,6 @@
     <Compile Include="ViewModel\CoffeeGrindViewModel.cs" />
     <Compile Include="ViewModel\CoffeeWorkViewModel.cs" />
     <Compile Include="ViewModel\ContainerViewModel.cs" />
-    <Compile Include="ViewModel\SugarContainerViewModel.cs" />
     <Compile Include="ViewModel\UserImputParametrViewModel.cs" />
     <Compile Include="ViewModel\WaterHeatingViewModel.cs" />
     <Compile Include="View\CoffeeWorkView.xaml.cs">
@@ -167,6 +166,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Coffee_List.png" />
     <Content Include="Assets\cup.png" />
     <Content Include="Assets\icon.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
@@ -210,6 +210,9 @@
     <Content Include="Assets\StoreLogo.scale-150.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Sugar_icon.png" />
+    <Content Include="Assets\UserDisplayDown.png" />
+    <Content Include="Assets\UserDisplayUp.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-125.png" />
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
@@ -227,10 +230,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Resources\Style\UserDisplayStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\CoffeeWorkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -272,8 +271,13 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.2</Version>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\coffee.txt" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

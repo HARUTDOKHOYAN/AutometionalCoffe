@@ -7,7 +7,8 @@
     <Grid
         MaxHeight="250"
         Padding="5"
-        BorderBrush="Black"
+        Background="#654536"
+        BorderBrush="#DDA15E"
         BorderThickness="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
@@ -30,7 +31,10 @@
             Grid.Row="2"
             Width="210"
             Height="50">
-            <Border BorderBrush="Black" BorderThickness="3">
+            <Border
+                Background="#654536"
+                BorderBrush="#DDA15E"
+                BorderThickness="5">
                 <control:SensorControl SensorColor="{x:Bind ViewModel.ChocolateWarmingUpSensor, Mode=OneWay}" SensorName="ChocolateWarmingUpSensor" />
             </Border>
         </Grid>

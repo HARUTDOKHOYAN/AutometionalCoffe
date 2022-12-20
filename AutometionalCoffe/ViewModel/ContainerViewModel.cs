@@ -1,10 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
-using AutometionalCoffee.Model;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using Windows.UI.Xaml.Media;
-using System;
 using Windows.UI;
+using System;
 
 namespace AutometionalCoffe.ViewModel
 {
@@ -20,7 +19,6 @@ namespace AutometionalCoffe.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
 
         public SolidColorBrush ContainerWorkSensorColor
         {

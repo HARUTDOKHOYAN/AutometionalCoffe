@@ -20,8 +20,6 @@ namespace AutometionalCoffee.ViewModel
         private SolidColorBrush _coffeeGrindPipelineColor = new SolidColorBrush();
         private SolidColorBrush _chocolatPipelineColor = new SolidColorBrush();
 
-
-
         public CoffeeWorkViewModel()
         {
             InitViewModels();
