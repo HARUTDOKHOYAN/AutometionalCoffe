@@ -2,75 +2,75 @@
 {
   "name": "ESPRESSO",
   "cost": "150",
-  "water_count": "22",
+  "water_count": "120",
   "coffee_count": "8",
   "milk_count": "0",
   "chocoolatr_count": "0",
   "coffee_actioons": [
-    "get_hotwater\" , \"get_componet\" , \"get_sugar"
+    "get_hotwater" , "get_componet" , "get_sugar"
   ]
 },
 {
   "name": "MOCHA",
   "cost": "300",
-  "water_count": "22",
+  "water_count": "120",
   "coffee_count": "8",
-  "milk_count": "140",
-  "chocoolatr_count": "50",
+  "milk_count": "14",
+  "chocoolatr_count": "5",
   "coffee_actioons": [
-    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk\" , \"get_chocolate"
+    "get_hotwater" , "get_componet" , "get_sugar" , "get_milk" , "get_chocolate"
   ]
 },
 {
   "name": "LATTE",
   "cost": "300",
-  "water_count": "22",
+  "water_count": "90",
   "coffee_count": "8",
-  "milk_count": "250",
-  "chocoolatr_count": "50",
+  "milk_count": "25",
+  "chocoolatr_count": "5",
   "coffee_actioons": [
-    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk\"  , \"get_chocolate" ]
+    "get_hotwater" , "get_componet" , "get_sugar" , "get_milk"  , "get_chocolate" ]
 },
 {
   "name": "CAPPUCCINO",
   "cost": "250",
-  "water_count": "22",
+  "water_count": "100",
   "coffee_count": "8",
-  "milk_count": "140",
+  "milk_count": "14",
   "chocoolatr_count": "0",
   "coffee_actioons": [
-    "get_hotwater\" , \"get_componet\" , \"get_sugar\" ,\"get_milk"  ]
+    "get_hotwater" , "get_componet" , "get_sugar" , "get_milk"  ]
 },
 {
   "name": "HOTCHOCOLATE",
   "cost": "200",
   "water_count": "100",
   "coffee_count": "0",
-  "milk_count": "100",
-  "chocoolatr_count": "60",
+  "milk_count": "10",
+  "chocoolatr_count": "6",
   "coffee_actioons": [
-    "get_hotwater\" ,  \"get_sugar\",  \"get_milk\" , \"get_chocolate"
+    "get_hotwater" ,  "get_sugar",  "get_milk" , "get_chocolate"
   ]
 },
 {
   "name": "BLACKCOFFEE",
   "cost": "100",
   "water_count": "50",
-  "coffee_count": "25",
+  "coffee_count": "15",
   "milk_count": "0",
   "chocoolatr_count": "0",
   "coffee_actioons": [
-    "get_hotwater\" ,  \"get_componet\" , \"get_sugar" ]
+    "get_hotwater" ,  "get_componet" , "get_sugar" ]
 },
 {
   "name": "C.W.M.",
   "cost": "150",
-  "water_count": "80",
+  "water_count": "130",
   "coffee_count": "8",
-  "milk_count": "70",
+  "milk_count": "7",
   "chocoolatr_count": "0",
   "coffee_actioons": [
-    "get_hotwater\" ,  \"get_componet\",\"get_milk\", \"get_sugar" ]
+    "get_hotwater" ,  "get_componet", "get_milk", "get_sugar" ]
 },
 {
   "name": "NESCAFE",
@@ -80,7 +80,7 @@
   "milk_count": "0",
   "chocoolatr_count": "0",
   "coffee_actioons": [
-    "get_hotwater\" ,  \"get_componet\", \"get_sugar" ]
+    "get_hotwater" ,  "get_componet", "get_sugar" ]
 },
 
 ]

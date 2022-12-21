@@ -12,7 +12,7 @@ namespace AutometionalCoffe.Resources
     public class CoffeeResource
     {
         public static ObservableCollection<CoffeeConfigModel> CoffeeList { get; set; }
-        public async static void LoadCoffeeList()
+        public async static Task<ObservableCollection<CoffeeConfigModel>> LoadCoffeeList()
         {
             var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/coffee.txt"));
             using (var inputStream = await file.OpenReadAsync())
@@ -20,7 +20,7 @@ namespace AutometionalCoffe.Resources
             using (var streamReader = new StreamReader(classicStream))
             {
                 string json = streamReader.ReadToEnd();
-                CoffeeList = JsonConvert.DeserializeObject<ObservableCollection<CoffeeConfigModel>>(json);
+                return JsonConvert.DeserializeObject<ObservableCollection<CoffeeConfigModel>>(json);
             }
         }
     }

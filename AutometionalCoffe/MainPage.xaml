@@ -11,17 +11,33 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.25*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
         <!--  Coffee coonfig control  -->
         <local1:UserDisplayView
             x:Name="UserDisplay"
-            Grid.Column="1"
+            Grid.RowSpan="3"
+            Grid.Column="2"
             ViewModel="{x:Bind ViewModel.UserDisplayViewModel}" />
 
         <view:CoffeeWorkView
             x:Name="CoffeeWork"
+            Grid.RowSpan="3"
             Grid.Column="0"
+            Grid.ColumnSpan="2"
             ViewModel="{x:Bind ViewModel.CoffeeWorkViewModel}" />
+
+        <TextBlock
+            VerticalAlignment="Center"
+            Grid.Row="2"
+            FontSize="24"
+            Grid.Column="1"
+            Text="Await coffee" />
     </Grid>
 </Page>

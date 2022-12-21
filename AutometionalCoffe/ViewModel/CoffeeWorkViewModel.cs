@@ -93,6 +93,7 @@ namespace AutometionalCoffee.ViewModel
             }
         }
 
+
         private void InitColors()
         {
             WaterPipelineColor.Color = Color.FromArgb(255, 0, 0, 0);

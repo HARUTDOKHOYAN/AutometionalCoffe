@@ -12,10 +12,15 @@ namespace AutometionalCoffe.View.Control
         public UserDisplayView()
         {
             this.InitializeComponent();
+            Loading +=UserDisplayView_Loading;
             Loaded +=UserDisplayView_Loaded;
         }
 
+        private async void UserDisplayView_Loading(FrameworkElement sender, object args)
+        {
+           ViewModel.CoffeeList = await  CoffeeResource.LoadCoffeeList();
 
+        }
 
         public delegate void CoffeeHandler(CoffeeConfigModel sender);
         public event CoffeeHandler CoffeeAdd;

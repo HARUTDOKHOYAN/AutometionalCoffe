@@ -16,6 +16,7 @@ namespace AutometionalCoffee
 
         public CoffeeWorkViewModel CoffeeWorkViewModel { get; set; }
 
+
             
         public async Task CoffeeRegister(CoffeeConfigModel sender)
         {
@@ -27,6 +28,7 @@ namespace AutometionalCoffee
             {
                 await CoffeeWorkViewModel.ExistActions[action].Invoke(sender);
             }
+
         }
 
         private void InitializeComponent()

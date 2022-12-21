@@ -68,7 +68,7 @@
                 Grid.Row="0"
                 Grid.ColumnSpan="2"
                 IsItemClickEnabled="True"
-                ItemsSource="{x:Bind ViewModel.CoffeeList}"
+                ItemsSource="{x:Bind ViewModel.CoffeeList, Mode=OneWay}"
                 ScrollViewer.HorizontalScrollMode="Disabled"
                 ScrollViewer.VerticalScrollMode="Disabled">
                 <ListView.ItemsPanel>
@@ -79,7 +79,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="modle1:CoffeeConfigModel">
                         <ListViewItem Style="{StaticResource CoffeeListStyle}">
-                            <Grid Width="100">
+                            <Grid Width="120">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="*" />
@@ -103,15 +103,15 @@
 
             <Button
                 x:Name="GetCoinButton"
-                Width="90"
-                Margin="10"
-                FontSize="15"
                 Grid.Row="3"
                 Grid.ColumnSpan="2"
+                Width="90"
+                Margin="10"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
                 Content="Accept"
-                CornerRadius="15" />
+                CornerRadius="15"
+                FontSize="15" />
 
 
             <!--  User input control  -->
