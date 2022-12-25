@@ -126,10 +126,14 @@
     <Compile Include="Systems\SensorSystem.cs" />
     <Compile Include="ViewModel\ChocolateViewModel.cs" />
     <Compile Include="ViewModel\CoffeeGrindViewModel.cs" />
+    <Compile Include="ViewModel\CoffeeMachineDisplayViewModel.cs" />
     <Compile Include="ViewModel\CoffeeWorkViewModel.cs" />
     <Compile Include="ViewModel\ContainerViewModel.cs" />
     <Compile Include="ViewModel\UserImputParametrViewModel.cs" />
     <Compile Include="ViewModel\WaterHeatingViewModel.cs" />
+    <Compile Include="View\CoffeeMachineDisplayView.xaml.cs">
+      <DependentUpon>CoffeeMachineDisplayView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CoffeeWorkView.xaml.cs">
       <DependentUpon>CoffeeWorkView.xaml</DependentUpon>
     </Compile>
@@ -230,6 +234,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\CoffeeMachineDisplayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CoffeeWorkView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
