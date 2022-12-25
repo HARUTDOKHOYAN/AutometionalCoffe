@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutometionalCoffee
 {
-    public class AutometionalCore 
+    public class AutometionalCore
     {
         private PaymentSystem _paymentSystem;
         public AutometionalCore()
@@ -20,7 +20,7 @@ namespace AutometionalCoffee
         public CoffeeMachineDisplayViewModel CoffeeMachineDisplayViewModel { get; set; }
 
 
-            
+
         public async Task CoffeeRegister(CoffeeConfigModel sender)
         {
             if (!_paymentSystem.PayForCoffee(sender.Cost))

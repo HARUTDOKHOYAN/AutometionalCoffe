@@ -1,8 +1,8 @@
 ﻿using AutometionalCoffee.ViewModel;
+using AutometionalCoffe.Resources;
 using AutometionalCoffee.Model;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml;
-using AutometionalCoffe.Resources;
 
 namespace AutometionalCoffe.View.Control
 {

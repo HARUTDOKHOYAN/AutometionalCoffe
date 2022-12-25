@@ -1,6 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
-using AutometionalCoffe.Resources;
 using AutometionalCoffe.ViewModel;
 using AutometionalCoffee.Systems;
 using AutometionalCoffee.Model;
